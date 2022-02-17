@@ -1,0 +1,15 @@
+.about-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 4rem 10rem;
+}
+.about-container > * {
+	margin: 0.5rem 0;
+}
+@media screen and (max-width: 700px) {
+	.about-container {
+		padding: 4rem 1rem;
+	}
+}

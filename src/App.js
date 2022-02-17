@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Header from './components/header/Header';
+import { Routes, Route } from 'react-router-dom';
+import About from './pages/about/About';
+import Home from './pages/Home/Home';
+import UserPage from './pages/userPage/UserPage';
+import GithubProvider from './context/githubContext';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<GithubProvider>
+				<Header />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/:username" element={<UserPage />} />
+				</Routes>
+			</GithubProvider>
+		</>
+	);
 }
 
 export default App;

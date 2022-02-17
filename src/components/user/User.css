@@ -1,0 +1,34 @@
+.user-container {
+	width: 150px;
+	height: 150px;
+	border: 2px solid #000000;
+	text-align: center;
+	position: relative;
+	border-radius: 1rem;
+	margin: 1rem;
+}
+.user-container .img {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.img img {
+	width: 100%;
+	height: 100%;
+}
+.user-container h6 {
+	position: absolute;
+	bottom: 1rem;
+	text-align: center;
+	width: 100%;
+	margin: auto;
+	color: #000000;
+}
+
+.username {
+	font-size: 1.25rem;
+}
+.github-icon {
+	font-size: 2rem;
+	margin-top: 2rem;
+}
