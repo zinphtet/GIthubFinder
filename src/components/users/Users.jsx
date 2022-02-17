@@ -6,12 +6,9 @@ import { githubContext } from '../../context/githubContext'
 import './Users.css'
 
 function Users() {
-  const {users,fetchUsers} = useContext(githubContext)
-  useEffect(() => {
-    fetchUsers()
-  }, [])
- 
-   if(users.length ===0) return  <Loading/>
+   const {users,loading} = useContext(githubContext)
+  //  const users = []
+  if(loading) return  <Loading/>
   return (
     <div className='users-container'>
       { users.map(user=> <User key={user.id} user={user} />)} 
