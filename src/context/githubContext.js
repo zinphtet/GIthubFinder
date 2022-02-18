@@ -7,7 +7,7 @@ const GithubProvider = ({ children }) => {
 	const initialState = {
 		loading: false,
 		users: [],
-		user: null,
+		user: {},
 		clear: false,
 		noresult: true,
 	};

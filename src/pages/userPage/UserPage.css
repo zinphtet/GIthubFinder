@@ -1,0 +1,65 @@
+.user-page {
+	padding: 2rem 7rem;
+	/* border: 5px solid red; */
+}
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.user-page .user-container {
+	margin-left: 0px;
+}
+.card {
+	padding: 0.2rem 0.5rem;
+	width: 200px;
+	border-radius: 0.2rem;
+	border: 2px solid black;
+}
+.inner-user {
+	min-width: 500px;
+	max-width: 60%;
+	/* border: 2px solid blue; */
+	margin: 0 auto;
+}
+.inner-flex {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+}
+.inner-flex > * {
+	margin: 0.3rem 0;
+}
+.flex-row > *:first-child {
+	margin-right: 1rem;
+}
+.view-github {
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+.bio {
+	width: 100%;
+	margin: 0 auto;
+}
+.location-info {
+	margin: 0.5rem 0;
+}
+.location-info.flex-row > *:first-child {
+	margin-right: 0;
+}
+.location-info.flex-row {
+	flex-direction: row;
+	justify-content: space-between;
+}
+.about-repos > *:first-child {
+	margin-right: 0;
+}
+.hire {
+	text-align: center;
+	border: 2px solid blueviolet;
+}
+.hire:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
