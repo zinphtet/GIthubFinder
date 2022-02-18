@@ -6,7 +6,7 @@ import { VscGithubInverted} from "react-icons/vsc";
 function User({user:{avatar_url,login,url}}) {
   const navigate = useNavigate()
   return (
-    <div className='user-container' onClick={()=> navigate('/userName')}>
+    <div className='user-container' onClick={()=> navigate(`/users/${login}`)}>
         {/* <div className='img'>
             <img src={avatar_url} alt="github profile" />
         </div> */}

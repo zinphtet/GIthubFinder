@@ -1,0 +1,10 @@
+.alert-icon {
+	margin: 0rem 0.3rem;
+	color: red;
+}
+.alert-div {
+	margin: 0.5rem 0 0.5rem 0.4rem;
+	align-self: flex-start;
+	position: absolute;
+	top: 2.5rem;
+}

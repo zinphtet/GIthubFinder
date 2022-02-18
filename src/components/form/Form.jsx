@@ -1,11 +1,15 @@
 import React from 'react'
 import './Form.css'
-import ClearBtn from './ClearBtn'
 import {useContext,useState} from 'react'
 import { githubContext } from '../../context/githubContext'
 import {fetchUsers} from '../../reducer/actions/action'
+import Alert from '../alert/Alert'
+import { alertContext } from '../../context/alertContext'
+
 function Form() {
-    const {dispatch,clear}  = useContext(githubContext)
+   const {dispatch,clear,users}  = useContext(githubContext)
+   const {alert , setAlert} = useContext(alertContext)
+
    const [searchText,setText] = useState('')
 
   const handleInput = (e)=>{
@@ -13,10 +17,11 @@ function Form() {
   }
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    if(searchText==='') return alert('Type something ..')
+     if(searchText==='') return setAlert('Type something to search')
     dispatch({type:'LOADING_STATE'})
    const data=  await fetchUsers(searchText)
    dispatch({type:'GET_USERS' , payload:data})
+   setText('')
   }
   const handleClear = (e)=>{
     dispatch({type:'CLEAR_USERS'})
@@ -25,15 +30,18 @@ function Form() {
   return (
    
       <div className="form" onSubmit={handleSubmit}>
+      { alert && <Alert/>}
            <form action="">
                 <input
                  type="text"
                   placeholder='Enter your search text ....'
                   onChange={handleInput}
+                  value={searchText}
                    />
                 <button type='submit'>Go</button>
            </form>
-           {true && <button type='button' className='clear' onClick={handleClear}>Clear All</button> } 
+           {(clear && users.length>0) && <button type='button' className='clear' onClick={handleClear}>Clear All</button> } 
+           {/* {true && <button type='button' className='clear' onClick={handleClear}>Clear All</button> }  */}
       </div>
   )
 }
